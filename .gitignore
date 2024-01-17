@@ -1,0 +1,44 @@
+# Python
+# Ignoriert kompilierte Python-Dateien (Bytecode), die mit der Dateiendung .pyc enden.
+*.pyc
+# Ignoriert temporäre Dateien, die mit einer Tilde (~) enden. 
+*~
+# Ignoriert den __pycache__-Ordner, der von Python 3 erstellt wird, um zwischengespeicherte Dateien zu speichern.
+__pycache__
+
+# Env
+# Ignoriert die Datei mit dem Namen .env, die oft für die Konfiguration von Umgebungsvariablen in Entwicklungsumgebungen verwendet wird.
+.env
+# Ignoriert virtuelle Python-Umgebungen, die normalerweise in den Verzeichnissen myvenv/ oder venv/ erstellt werden.
+myvenv/
+venv/
+
+# Datenbank
+# Ignoriert die SQLite-Datenbankdatei, die möglicherweise für lokale Entwicklungszwecke verwendet wird.
+db.sqlite3
+
+# Static Ordner im Projektverzeichnis
+# Ignoriert den static-Ordner im Hauptverzeichnis des Projekts. Dieser Ordner könnte statische Dateien wie CSS, JavaScript oder Bilder enthalten.
+/static/
+
+# macOS
+# Ignoriert Dateien und Ordner, die von macOS für Metadaten und Verzeichnisinformationen erstellt werden.
+._*
+.DS_Store
+.fseventsd
+.Spotlight-V100
+
+# Windows
+# Ignoriert Dateien und Ordner, die von Windows erstellt werden, wie z. B. Cache-Dateien und 
+Thumbs.db*
+ehthumbs*.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Visual Studio
+# Ignoriert den Ordner .vscode, der von Visual Studio Code erstellt wird und Konfigurationsdateien für das Projekt enthält.
+.vscode/
+# Ignoriert den .history-Ordner, der von einigen Entwicklungsumgebungen erstellt wird, um Verlaufsdaten zu speichern.
+.history/
+# Ignoriert Visual Studio Code-Arbeitsbereichsdateien, die Projekt- und Einstellungsinformationen für Visual Studio Code enthalten.
+*.code-workspace

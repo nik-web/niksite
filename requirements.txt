@@ -1,0 +1,4 @@
+# requirements.txt is a file that contains a list of packages or libraries needed to work on a project that can all be installed with the file.
+# It provides a consistent environment and makes collaboration easier.
+
+Django==4.2.9

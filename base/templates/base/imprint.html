@@ -1,0 +1,81 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+Das ist das Impressum dieser Webanwendung
+{% endblock %}
+
+{% block meta_description %}
+Das ist das Impressum dieser Webanwendung
+{% endblock %}
+
+{% block meta_keywords %}
+Impressum, Webanwendung
+{% endblock %}
+
+{% block content %}
+<header class="mt-4 mb-3 p-3 bg-primary text-white rounded">
+    <h1>
+        Impressum
+    </h1>
+    <p class="lead text-black">
+        Anbieterkennzeichnung gemäß §&nbsp;5&nbsp;TMG
+    </p>
+</header>
+<section>
+    <h2>
+        Anbieter
+    </h2>
+    <p>
+        {% if provider.IS_BUSINESS and '' != provider.TITLE %}
+            {{provider.TITLE}} {{ provider.FIRST_NAME }} {{ provider.LAST_NAME }}<br>
+            {{provider.BUSINESS_TYPE}} ({{provider.COMPANY_FORM}})
+        {% elif provider.IS_BUSINESS %}
+            {{ provider.FIRST_NAME }} {{ provider.LAST_NAME }}<br>
+            {{provider.BUSINESS_TYPE}} ({{provider.COMPANY_FORM}})
+        {% else %}
+        {{ provider.FIRST_NAME }} {{ provider.LAST_NAME }}
+        {% endif %}
+    </p>
+    <p>
+        {{provider.STREET}} {{provider.HOUSE_NUMBER}}<br>
+        {{provider.POSTCODE}} {{provider.CITY}}<br>
+        {{provider.COUNTRY}}
+    </p>
+    <p>
+        {% if '' != provider.PHONE_NUMBER %}
+        <b>Telefon: </b>{{provider.PHONE_NUMBER}}<br>
+        {% endif %}
+        {% if '' != provider.FAX_NUMBER %}
+        <b>Fax: </b>{{provider.FAX_NUMBER}}<br>
+        {% endif %}
+        {% if '' != provider.MOBILE_PHONE_NUMBER %}
+        <b>Mobil-Telefon: </b>{{provider.MOBILE_PHONE_NUMBER}}<br>
+        {% endif %}
+        <b>E-Mail: </b>{{provider.CONTACT_EMAIL}}
+    </p>
+</section>
+{% if '' != provider.TAX_ID_NUMBER %}
+<section>
+    <h2>
+        Umsatzsteuer-ID
+    </h2>
+    <p>
+        Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect;&nbsp;27&nbsp;a&nbsp;Umsatzsteuergesetz:<br>
+        {{provider.TAX_ID_NUMBER}}
+    </p>
+</section>
+{% endif %}
+<section>
+    <h2>
+        Verantwortlich f&uuml;r den Inhalt nach &sect;&nbsp;18&nbsp;Abs.&nbsp;2&nbsp;MStV
+    </h2>
+    <p>
+        {% if '' != provider.TITLE %}
+        {{provider.TITLE}} {{ provider.FIRST_NAME }} {{ provider.LAST_NAME }} 
+        {% else %}
+        {{ provider.FIRST_NAME }} {{ provider.LAST_NAME }} 
+        {% endif %}
+        (Anschrift wie oben)
+    </p>
+</section>
+{% endblock %}
